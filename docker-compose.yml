@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=your-secret-key-here
+      - DEBUG=True
+      - ALLOWED_HOSTS=localhost,127.0.0.1
+      - AWS_REGION=us-east-1
+      - S3_BUCKET_NAME=todoapps3bucket12345
+      - DYNAMODB_TABLE_NAME=TodoAppDB
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
