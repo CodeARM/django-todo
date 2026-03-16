@@ -6,7 +6,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - SECRET_KEY=your-secret-key-here
+      - SECRET_KEY=${SECRET_KEY}
       - DEBUG=True
       - ALLOWED_HOSTS=localhost,127.0.0.1
       - AWS_REGION=us-east-1
